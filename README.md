@@ -19,6 +19,6 @@ rails server (ecoute sur le port 3000)
 
 - [ ] Paiement d'un événement
 
-- [ ] la possibilité aux utilisateurs d'attacher une photo à l'événement qu'ils crééent
+- [x] la possibilité aux utilisateurs d'attacher une photo à l'événement qu'ils crééent
 
 - [ ] dashboard admin

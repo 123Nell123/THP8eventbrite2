@@ -4,7 +4,10 @@ class Event < ApplicationRecord
     has_many :participants, class_name: "User", through: :attendances
     belongs_to :admin, class_name: "User", optional: true
 
-    after_create :new_participant_send
+    #photo de event
+    has_one_attached :photoevent
+
+
     def right_duration
         if self.duration % 5 != 0
             errors.add(:duration, "must be multiple of 5")
@@ -27,10 +30,7 @@ class Event < ApplicationRecord
         end
     end
 
-    ## todo : verifier qu'ici on passe bien en aparemetre le user qui s'est enregistrer a l'event 
-    def new_participant_send
-        UserMailer.well_registered(self.participant).deliver_now
-    end
+
 
 
 end

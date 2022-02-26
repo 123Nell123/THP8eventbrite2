@@ -8,4 +8,11 @@ class UsersController < ApplicationController
       @events = Event.find_by admin_id: params[:id]
       @user = User.find(params[:id])
   end
+
+def update
+
+end
+
+
+
 end

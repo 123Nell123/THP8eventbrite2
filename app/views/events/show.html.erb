@@ -30,5 +30,18 @@
   <%= @event.location %>
 </p>
 
+
+<%if @event.photoevent.attached?%>
+  <%= image_tag @event.photoevent, alt: 'photoevent' %>
+<%else%>
+  <p>=== Il n'y a pas encore de photo lié à cet event ===</p>
+<%end%>
+
+<h3>Changer de photo d'evenement ?</h3>
+<%= form_tag event_photoevents_path(@event), multipart: true do %>
+  <%= file_field_tag :photoevent %>
+  <%= submit_tag "mettre à jour" %>
+<% end %>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
