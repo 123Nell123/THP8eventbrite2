@@ -1,34 +1,24 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %> remarque ici </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<p>
-  <strong>Encrypted password:</strong>
-  <%= @user.encrypted_password %>
-</p>
+    <div class="box-shadow container" style="margin-top : 20px;">
+        <h3 class="card-header text-center"><%= @user.first_name %> <%= @user.last_name %></h3>
+        <div class="container col-8 p-4">
+            <h5 class="card-title text-center"><%= @user.email %></h5>
+            <p class="card-body"> 
+                <%= @user.description %>
+            </p>
+            <p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @user.description %>
-</p>
 
-<p>
+<p class="card-body">
   <strong>First name:</strong>
   <%= @user.first_name %>
 </p>
 
-<p>
+<p class="card-body">
   <strong>Last name:</strong>
   <%= @user.last_name %>
 </p>
-
-<p>
-  <strong>Is admin:</strong>
-  <%= @user.is_admin %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+        </div>
+    </div>

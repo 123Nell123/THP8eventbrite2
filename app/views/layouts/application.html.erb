@@ -19,9 +19,12 @@
 
   <!-- Links -->
   <ul class="navbar-nav">
+<%if user_signed_in?%>
     <li class="nav-item">
-      <a class="nav-link" href=<%= new_user_path %>> s'inscrire  </a>
+      <a class="nav-link" href=<%= user_path(current_user.id) %>> profil user  </a>
     </li>
+ <%end%>
+
     <li class="nav-item">
       <a class="nav-link" href=<%= new_event_path %>> creer un evenement</a>  
     </li>
@@ -47,9 +50,7 @@
       Voici ton email : <%= current_user.email %>
     </li>
 
-    <li>
-      <%= link_to "Secret page", static_pages_secret_path %>
-    </li>
+   <!--  ajoute page secret ici-->
 
     <li>
       <%= link_to "Edit email / password", edit_user_registration_path %>
@@ -96,11 +97,6 @@
 
       <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-
-
-
-
-
 
     <%= yield %>
   </body>

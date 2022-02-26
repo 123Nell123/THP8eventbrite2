@@ -22,16 +22,17 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
-
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    @event.admin_id = current_user.id
+    @event.save
+    if @event.save
+      redirect_to event_path(@event.id)
+    else
+      flash.now[:danger] = "N'arrive pas à sauvegarder."
+      render action: 'new'
     end
+
+
+
   end
 
   # PATCH/PUT /events/1 or /events/1.json

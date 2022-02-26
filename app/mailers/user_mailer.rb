@@ -10,4 +10,14 @@ class UserMailer < ApplicationMailer
 
   
   end
+
+  
+  def well_registered(user)
+    @user = user
+    @url  = 'https://eventbrite.herokuapp.com'
+ 
+     mail(to: @user.email,from: 'purhasard@hotmail.com' , subject: 'vous avez bien été enregistré')
+
+  
+  end
 end
