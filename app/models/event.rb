@@ -4,4 +4,7 @@ class Event < ApplicationRecord
     has_many :participants, class_name: "User", through: :attendances
     belongs_to :admin, class_name: "User", optional: true
 
+    after_create :new_participant_send
+
+
 end
