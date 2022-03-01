@@ -71,3 +71,9 @@ gem 'dotenv'
 
 # If you use bundler, you can add this line to your Gemfile
 gem 'stripe'
+gem 'activeadmin'
+
+# Plus integrations with:gem 'devise'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'

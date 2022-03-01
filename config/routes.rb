@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  
   
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'photoevents/create'
   get 'photoevent/create'
   get 'avatars/create'
