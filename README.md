@@ -22,3 +22,7 @@ rails server (ecoute sur le port 3000)
 - [x] la possibilité aux utilisateurs d'attacher une photo à l'événement qu'ils crééent
 
 - [ ] dashboard admin
+
+
+- [ ] start the front
+- [x] finaliser le front
