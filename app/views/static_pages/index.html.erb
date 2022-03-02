@@ -1,13 +1,19 @@
-<h1>StaticPages#index</h1>
-<p>Find me in app/views/static_pages/index.html.erb</p>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <br><br><br>
-
- <a class="btn btn-lg my-btn" href=<%=events_path%> role="button">afficher les evenements </a>
+<div>
+  <div class="main-banner">
+    <img src="https://picsum.photos/1920/1080">
+    <div class="banner-img-shadow"> 
+ 
+    </div>
+    <div class="main-banner-text">
+     
+      <h1> EVENTBRITE </h1>
+    <h2> ne passez plus vos soirées à coder </h2>
+     
+      <a class="btn  btn-outline-primary" href=<%=events_path%> role="button">afficher les evenements </a>
+ 
     </div>
   </div>
+  <%= flash[:notice] %>
+
 </div>

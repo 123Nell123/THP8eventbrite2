@@ -1,34 +1,35 @@
+    <!-- Event card -->
+    <div class="card event-card" style="width: 18rem;">
+      <img src="https://picsum.photos/600/400" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h1> 
+         <%= @event.title %>
+        </h1>
+        <p class="card-text">
+        <%= @event.start_date %>
+        </p>
+        <p class="card-text">
+          <%= @event.description %>
+        </p>
+        <p class="card-text">
+        <%= @event.duration %>
+        </p>
+
+        <p class="card-text">
+        <%= @event.price %>
+        </p>
+
+
+
+        
+        <button type="submit" class="btn btn-primary">(to do) s'inscrire </button>
+      </div>
+    </div>
+
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @event.start_date %>
-</p>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @event.duration %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @event.price %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
 
 
 <%if @event.photoevent.attached?%>
@@ -41,6 +42,8 @@
 <%= form_tag event_photoevents_path(@event), multipart: true do %>
   <%= file_field_tag :photoevent %>
   <%= submit_tag "mettre à jour" %>
+   <%= flash[:notice] %>
+
 <% end %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

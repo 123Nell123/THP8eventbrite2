@@ -27,8 +27,11 @@ class EventsController < ApplicationController
     @event.save
     if @event.save
       redirect_to event_path(@event.id)
+      flash[:success] = "Post was successfully created."
+
     else
       flash.now[:danger] = "N'arrive pas à sauvegarder."
+      flash.now[:error] = @post.errors.full_messages.to_sentence
       render action: 'new'
     end
 

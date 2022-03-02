@@ -11,32 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+    <div class="sign-up-form form-theme">
+      <form class="justify-content-center">
+
+       
+
+  <div class="form_group">
     <%= form.label :start_date %>
     <%= form.datetime_select :start_date %>
   </div>
-
-  <div class="field">
+ <div class="form_group">
     <%= form.label :duration %>
     <%= form.number_field :duration %>
   </div>
 
-  <div class="field">
+  <div class="form_group">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="form_group">
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
 
-  <div class="field">
+  <div class="form_group">
     <%= form.label :price %>
     <%= form.number_field :price %>
   </div>
 
-  <div class="field">
+  <div class="form_group">
     <%= form.label :location %>
     <%= form.text_field :location %>
   </div>
@@ -45,3 +50,30 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+      </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
